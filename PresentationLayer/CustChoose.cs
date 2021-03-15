@@ -21,7 +21,8 @@ namespace PresentationLayer
             CustomerDataContext CDC = new CustomerDataContext();
             dataGridView1.DataSource =
                 CDC.Customers.Join(CDC.Addresses, c => c.CustomerId, a => a.Customer.CustomerId, (a, c) => 
-                new { a.CustomerId, a.Firstname, a.Lastname, c.Street, c.City, c.State, c.Zip }).ToList().AsReadOnly();
+                new { a.CustomerId, a.Firstname, a.Lastname, c.Street, c.City, c.State, c.Zip }).
+                OrderByDescending(c => c.CustomerId).ToList().AsReadOnly();
             dataGridView1.Columns["CustomerID"].Visible = false;
             
         }

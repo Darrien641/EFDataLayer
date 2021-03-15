@@ -3,11 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31019.35
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EFDataLayer", "EFDataLayer\EFDataLayer.csproj", "{0612075D-73B7-4A1A-B734-7FF135305CC3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EFDataLayer", "EFDataLayer\EFDataLayer.csproj", "{0612075D-73B7-4A1A-B734-7FF135305CC3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PresentationLayer", "PresentationLayer\PresentationLayer.csproj", "{138B8A7D-E00F-4BA0-AC02-E0C0A54032F6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PresentationLayer", "PresentationLayer\PresentationLayer.csproj", "{138B8A7D-E00F-4BA0-AC02-E0C0A54032F6}"
 	ProjectSection(ProjectDependencies) = postProject
 		{0612075D-73B7-4A1A-B734-7FF135305CC3} = {0612075D-73B7-4A1A-B734-7FF135305CC3}
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PROCS", "PROCS", "{B7BF7AF6-710D-48B1-9E5E-FD1F6AB4BD8A}"
+	ProjectSection(SolutionItems) = preProject
+		PROCS\CREATE_Procedures.sql = PROCS\CREATE_Procedures.sql
+		PROCS\DROP_Procedures.sql = PROCS\DROP_Procedures.sql
 	EndProjectSection
 EndProject
 Global

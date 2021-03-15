@@ -32,8 +32,6 @@ namespace PresentationLayer
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.NameEdit = new System.Windows.Forms.Button();
             this.AddrEdit = new System.Windows.Forms.Button();
-            this.NameUpdate = new System.Windows.Forms.Label();
-            this.AddrUpdate = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -68,32 +66,11 @@ namespace PresentationLayer
             this.AddrEdit.UseVisualStyleBackColor = true;
             this.AddrEdit.Click += new System.EventHandler(this.AddrEdit_Click);
             // 
-            // NameUpdate
-            // 
-            this.NameUpdate.AutoSize = true;
-            this.NameUpdate.Location = new System.Drawing.Point(35, 110);
-            this.NameUpdate.Name = "NameUpdate";
-            this.NameUpdate.Size = new System.Drawing.Size(234, 15);
-            this.NameUpdate.TabIndex = 3;
-            this.NameUpdate.Text = "First Name Has Been Successfully Updated!";
-            this.NameUpdate.Visible = false;
-            // 
-            // AddrUpdate
-            // 
-            this.AddrUpdate.AutoSize = true;
-            this.AddrUpdate.Location = new System.Drawing.Point(398, 109);
-            this.AddrUpdate.Name = "AddrUpdate";
-            this.AddrUpdate.Size = new System.Drawing.Size(219, 15);
-            this.AddrUpdate.TabIndex = 4;
-            this.AddrUpdate.Text = "Address Has Been Successfully Updated!";
-            // 
             // CustChoose
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(665, 448);
-            this.Controls.Add(this.AddrUpdate);
-            this.Controls.Add(this.NameUpdate);
             this.Controls.Add(this.AddrEdit);
             this.Controls.Add(this.NameEdit);
             this.Controls.Add(this.dataGridView1);
@@ -103,7 +80,6 @@ namespace PresentationLayer
             this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dataGridView1_MouseClick);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -112,8 +88,6 @@ namespace PresentationLayer
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button NameEdit;
         private System.Windows.Forms.Button AddrEdit;
-        private System.Windows.Forms.Label NameUpdate;
-        private System.Windows.Forms.Label AddrUpdate;
     }
 }
 
