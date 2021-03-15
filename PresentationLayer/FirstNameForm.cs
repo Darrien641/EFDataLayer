@@ -31,13 +31,13 @@ namespace PresentationLayer
                 EmptyWarning.Visible = true;
             }
             else
-            {             
+            {
                 CDC.Database.ExecuteSqlRaw("Execute dbo.UpdateCustFirstName @ID, @NewFirstName",
                   new SqlParameter("ID", CustomerID), new SqlParameter("NewFirstName", FNameBox.Text.ToString()));
                 CustChoose CustView = new CustChoose();
                 CustView.Show();
-                this.Hide();
-            } 
+                this.Close();
+            }
         }
 
         private void FirstNameForm_Load(object sender, EventArgs e)
@@ -45,6 +45,11 @@ namespace PresentationLayer
             Customer FNameUpdate = CDC.Customers.Single(c => c.CustomerId == CustomerID);
             FNameBox.Text = FNameUpdate.Firstname;
             LNameBox.Text = FNameUpdate.Lastname;
+        }
+
+        private void Cancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

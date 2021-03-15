@@ -13,15 +13,13 @@ namespace PresentationLayer
 {
     public partial class AddrEditForm : Form
     {
-        readonly CustomerDataContext CDC = new CustomerDataContext();
+        CustomerDataContext CDC = new CustomerDataContext();
         readonly int CustomerID;
         public AddrEditForm(int custID)
         {
             InitializeComponent();
             CustomerID = custID;
         }
-        //use customer and address to edit address
-        //save changes to data base
         private void AddrEditForm_Load(object sender, EventArgs e)
         {
             var UpdatableCust = CDC.Customers.Single(c => c.CustomerId == CustomerID);
@@ -33,7 +31,6 @@ namespace PresentationLayer
             ZipBox.Text = UpdatableAddr.Zip;
 
         }
-
         private void AddrUpdate_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(StreetBox.Text) || string.IsNullOrWhiteSpace(StreetBox.Text)
@@ -43,7 +40,7 @@ namespace PresentationLayer
             {
                 Required.Visible = true;
             }
-            else 
+            else
             {
                 Required.Visible = false;
                 Address NewAddr = CDC.Addresses.Single(a => a.CustomerId == CustomerID);
@@ -55,7 +52,6 @@ namespace PresentationLayer
                 this.Close();
             }
         }
-
         private void StateBox_TextChanged(object sender, EventArgs e)
         {
             if (StateBox.Text.Length > 2)
@@ -67,12 +63,14 @@ namespace PresentationLayer
                 StateReq.Visible = false;
             }
         }
-
         private void AddrEditForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             CustChoose CustView = new CustChoose();
             CustView.Show();
-         
+        }
+        private void Cancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

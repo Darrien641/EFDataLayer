@@ -41,6 +41,7 @@ namespace PresentationLayer
             this.label5 = new System.Windows.Forms.Label();
             this.Required = new System.Windows.Forms.Label();
             this.StateReq = new System.Windows.Forms.Label();
+            this.Cancel = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -148,11 +149,22 @@ namespace PresentationLayer
             this.StateReq.TabIndex = 11;
             this.StateReq.Text = "*Please Use State Abbreviations!*";
             // 
+            // Cancel
+            // 
+            this.Cancel.Location = new System.Drawing.Point(229, 306);
+            this.Cancel.Name = "Cancel";
+            this.Cancel.Size = new System.Drawing.Size(75, 23);
+            this.Cancel.TabIndex = 12;
+            this.Cancel.Text = "Cancel";
+            this.Cancel.UseVisualStyleBackColor = true;
+            this.Cancel.Click += new System.EventHandler(this.Cancel_Click);
+            // 
             // AddrEditForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(330, 406);
+            this.Controls.Add(this.Cancel);
             this.Controls.Add(this.StateReq);
             this.Controls.Add(this.Required);
             this.Controls.Add(this.label5);
@@ -188,5 +200,6 @@ namespace PresentationLayer
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label Required;
         private System.Windows.Forms.Label StateReq;
+        private System.Windows.Forms.Button Cancel;
     }
 }

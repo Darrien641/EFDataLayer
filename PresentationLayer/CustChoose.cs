@@ -8,7 +8,7 @@ namespace PresentationLayer
 {
     public partial class CustChoose : Form
     {
-        
+
         public CustChoose()
         {
             InitializeComponent();
@@ -20,21 +20,17 @@ namespace PresentationLayer
             AddrEdit.Enabled = false;
             CustomerDataContext CDC = new CustomerDataContext();
             dataGridView1.DataSource =
-                CDC.Customers.Join(CDC.Addresses, c => c.CustomerId, a => a.Customer.CustomerId, (a, c) => 
+                CDC.Customers.Join(CDC.Addresses, c => c.CustomerId, a => a.Customer.CustomerId, (a, c) =>
                 new { a.CustomerId, a.Firstname, a.Lastname, c.Street, c.City, c.State, c.Zip }).
                 OrderByDescending(c => c.CustomerId).ToList().AsReadOnly();
             dataGridView1.Columns["CustomerID"].Visible = false;
-            
+
         }
-
-
-
         private void button1_Click(object sender, EventArgs e)
         {
-            //int SelectedRow = dataGridView1.CurrentRow.Index;
             int CustID = Convert.ToInt32(dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[0].Value);
             FirstNameForm EditFirst = new FirstNameForm(CustID);
-            
+
             EditFirst.Show();
             this.Hide();
 
@@ -42,9 +38,7 @@ namespace PresentationLayer
 
         private void AddrEdit_Click(object sender, EventArgs e)
         {
-            //int SelectedRow = dataGridView1.CurrentRow.Index;
             int CustID = Convert.ToInt32(dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[0].Value);
-            //send cudtomer and address objects to addrEdit form to be used and displayed
             AddrEditForm addrEdit = new AddrEditForm(CustID);
             addrEdit.Show();
             this.Hide();
@@ -60,10 +54,10 @@ namespace PresentationLayer
         {
             AddrEdit.Enabled = true;
             NameEdit.Enabled = true;
-        } 
+        }
         private void dataGridView1_MouseClick(object sender, MouseEventArgs e)
         {
-            
+
         }
     }
 }
